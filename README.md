@@ -1,7 +1,7 @@
 # exercises
 
 #Start
-#npm run start
+npm run start
 
 #Test
-#npm run test:coverage
+npm run test:coverage
