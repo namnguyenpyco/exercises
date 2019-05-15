@@ -3,7 +3,7 @@ import { amountDiscount, percentDiscount } from '../netPay'
 
 describe('test question 3', () => {
   describe('net pay', () => {
-    it('test return value', () => {
+    it('net pay for normal user', () => {
       const number = 95;
       const bill = {
         type: 'customer',
@@ -39,7 +39,7 @@ describe('test question 3', () => {
   });
 
   describe('test discount percent', () => {
-    it('test groceries', () => {
+    it('test discount percent for groceries', () => {
       const percent = 0;
       const bill = {
         type: 'groceries',
@@ -51,7 +51,7 @@ describe('test question 3', () => {
   })
 
   describe('test discount percent', () => {
-    it('test employee', () => {
+    it('test discount percent for employee', () => {
       const percent = 30;
       const bill = {
         type: 'employee',
@@ -63,7 +63,7 @@ describe('test question 3', () => {
   })
 
   describe('test discount percent', () => {
-    it('test affiliate', () => {
+    it('test discount percent for affiliate', () => {
       const percent = 10;
       const bill = {
         type: 'affiliate',
@@ -75,7 +75,7 @@ describe('test question 3', () => {
   })
 
   describe('test discount percent', () => {
-    it('test checkCustomerOver2Year', () => {
+    it('test discount percent for customer over 2 years', () => {
       const percent = 5;
       const bill = {
         type: 'customer',
@@ -87,7 +87,7 @@ describe('test question 3', () => {
   })
 
   describe('test amount discount', () => {
-    it('return amount right', () => {
+    it('test amout discount for buy > 100', () => {
       const amount = 45;
       const bill = {
         type: 'employee',
@@ -99,7 +99,7 @@ describe('test question 3', () => {
   })
 
   describe('test amount discount', () => {
-    it('return percent discount', () => {
+    it('test amout discount for buy < 100', () => {
       const amount = 0;
       const bill = {
         type: 'customer',

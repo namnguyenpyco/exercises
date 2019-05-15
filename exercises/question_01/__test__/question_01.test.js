@@ -2,7 +2,7 @@ import loadData from '../load'
 import storeData from '../store'
 
 describe('test question 1', () => {
-  describe('load data', () => {
+  describe('test load data', () => {
     it('test load data', () => {
       const data = 'key1=value1;key2=value2\nkeyA=valueA\n...'
       const object = [{
@@ -16,7 +16,7 @@ describe('test question 1', () => {
   });
 
   describe('load data', () => {
-    it('test load search do not have \n', () => {
+    it('test load data if do not have \n', () => {
       const data = 'key1=value1;key2=value2keyA=valueA...'
       const object = [];
       expect(loadData(data)).toEqual(object);
@@ -24,7 +24,7 @@ describe('test question 1', () => {
   });
 
   describe('load data', () => {
-    it('test load search do not have =', () => {
+    it('test load data if do not have =', () => {
       const data = 'key1value1;key2value2\nkeyAvalueA\n...'
       const object = [{}];
       expect(loadData(data)).toEqual(object);
