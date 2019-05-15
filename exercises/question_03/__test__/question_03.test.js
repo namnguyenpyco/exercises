@@ -1,27 +1,40 @@
 import netPay from '../netPay';
+import {amountDiscount, percentDiscount} from '../netPay'
 
-describe('test question 1', () => {
-    describe('load data', () => {
-        it('test load data', () => {
+describe('test question 3', () => {
+    describe('net pay', () => {
+        it('test return value', () => {
           const number = 95;
           const bill = {
             type: 'customer',
-            bill: 100,
+            buy: 100,
             joinDate: 2019
         }
           expect(netPay(bill)).toEqual(number);
         });
     });
 
-    describe('load data', () => {
-        it('test load data', () => {
-          const number = 95;
+    describe('test discount percent', () => {
+        it('return percent right', () => {
+          const percent = 10;
           const bill = {
-            type: 'customer',
-            bill: 100,
+            type: 'affiliate',
+            buy: 100,
             joinDate: 2019
         }
-          expect(netPay(bill)).toEqual(number);
+          expect(percentDiscount(bill.type, bill.buy)).toEqual(percent);
         });
     })
+
+    describe('test amount discount', () => {
+      it('return amount right', () => {
+        const amount = 45;
+        const bill = {
+          type: 'customer',
+          buy: 990,
+          joinDate: 2019
+      }
+        expect(amountDiscount(bill.type, bill.buy)).toEqual(amount);
+      });
+  })
 })

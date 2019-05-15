@@ -1,7 +1,7 @@
 {
   "name": "exercises",
   "version": "1.0.0",
-  "description": "",
+  "description": "#Start npm run start",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/namnguyenpyco/exercises.git"
+    "url": "git+https://github.com/namnguyenpyco/exercises.git"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +25,9 @@
     "@babel/preset-env": "^7.4.4",
     "nodemon": "^1.19.0",
     "typescript": "^3.4.5"
-  }
-  
+  },
+  "bugs": {
+    "url": "https://github.com/namnguyenpyco/exercises/issues"
+  },
+  "homepage": "https://github.com/namnguyenpyco/exercises#readme"
 }

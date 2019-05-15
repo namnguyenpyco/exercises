@@ -12,7 +12,7 @@ console.log(`Q1: Store data ${storeData(data)}`);
 //Question 03 net pay for bill
 const bill = {
     type: 'customer',
-    bill: 100,
+    buy: 220,
     joinDate: 2019
 }
 console.log(`Q3: net pay ${netPay(bill)}`);

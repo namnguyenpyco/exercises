@@ -1,28 +1,28 @@
 const loadData = (text) => {
     let s = text.search('\n');
-    let d, n, f, h, m, c, e;
+    let arraySplitN, searchString, arraySplitSemiColon, searchCharacter, arraySplitCharacter, seachStringIfNotCharacter, arraySplitEnd;
     let object1 = {};
     let object2 = {};
     let result = [];
     if (s > -1) {
-        d = text.split('\n');
-        d.map(i => {
-            n = i.search(';');
-            if (n > -1) {
-                f = i.split(';');
-                f.map(s => {
-                    h = s.search('=');
-                    if (h > -1) {
-                        m = s.split('=');
-                        object1[m[0]] = m[1];
+        arraySplitN = text.split('\n');
+        arraySplitN.map(i => {
+            searchString = i.search(';');
+            if (searchString > -1) {
+                arraySplitSemiColon = i.split(';');
+                arraySplitSemiColon.map(s => {
+                    searchCharacter = s.search('=');
+                    if (searchCharacter > -1) {
+                        arraySplitCharacter = s.split('=');
+                        object1[arraySplitCharacter[0]] = arraySplitCharacter[1];
                     }
                 });
                 result.push(object1);
             } else {
-                c = i.search('=');
-                if (c > -1) {
-                    e = i.split('=');
-                    object2[e[0]] = e[1];
+                seachStringIfNotCharacter = i.search('=');
+                if (seachStringIfNotCharacter > -1) {
+                    arraySplitEnd = i.split('=');
+                    object2[arraySplitEnd[0]] = arraySplitEnd[1];
                     result.push(object2);
                 }
             }

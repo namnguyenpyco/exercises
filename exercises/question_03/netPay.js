@@ -1,50 +1,48 @@
 const percentDiscount = (type, year) => {
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
-    const checkCustomerOver2Year = currentYear - year > 0 ? true : false;
+    const checkCustomerOver2Year = currentYear - year > 2 ? true : false;
 
+    if (type === 'groceries') {
+        return 0;
+    }
     if (type === 'employee') {
-        return {percentDiscount: 30}
+        return 30
     }
-
     if (type === 'affiliate') {
-        return {percentDiscount: 10}
+        return 10
     }
-
     if (checkCustomerOver2Year) {
-        return {percentDiscount: 5}
+        return 5
     }
-
-    return  {percentDiscount: 0}
+    return  0;
 }
 
-const discountOnBill = (type, number) => {
-    if (type === 'groceries') {
-        return {moneyDiscount: 0}
+const amountDiscount = (type, number) => {
+    if ( number === 100 ) {
+        return 5
     }
 
-    if (number >= 990 ) {
-        return {moneyDiscount: 45}
+    if (number > 100 ) {
+        return Math.floor(number/100) * 5;
     }
-
-    if ( 100 <= number < 990 ) {
-        return {moneyDiscount: 5}
-    } 
+    return 0;
 }
 
 const netPay = (data) => {
     let finalPay;
     const checkDiscountPercent = percentDiscount(data.type, data.joinDate);
-    const checkMoneyDiscount = discountOnBill(data.type, data.bill);
+    const checkMoneyDiscount = amountDiscount(data.type, data.buy);
 
-    if (checkDiscountPercent.percentDiscount > 0) {
-        finalPay = data.bill - ((data.bill*checkDiscountPercent.percentDiscount)/100);
-    } else if (checkMoneyDiscount.moneyDiscount > 0) {
-        finalPay = data.bill - checkMoneyDiscount.moneyDiscount;
+    if (checkDiscountPercent > 0) {
+        finalPay = data.buy - ((data.bill*checkDiscountPercent)/100);
+    } else if (checkMoneyDiscount > 0) {
+        finalPay = data.buy - checkMoneyDiscount;
     } else {
-        finalPay = data.bill;
+        finalPay = data.buy;
     }
     return finalPay;
 }
 
+export {amountDiscount, percentDiscount}
 export default netPay;
