@@ -7,20 +7,20 @@ const percentDiscount = (type, year) => {
         return 0;
     }
     if (type === 'employee') {
-        return 30
+        return 30;
     }
     if (type === 'affiliate') {
-        return 10
+        return 10;
     }
     if (checkCustomerOver2Year) {
-        return 5
+        return 5;
     }
     return  0;
 }
 
 const amountDiscount = (type, number) => {
     if ( number === 100 ) {
-        return 5
+        return 5;
     }
 
     if (number > 100 ) {
