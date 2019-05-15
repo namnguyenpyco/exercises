@@ -1,9 +1,9 @@
 # Exercise
 -----------------------------------------------------------------------
 
-## Development server
+## Start
 
-Run `npm run start` for run.
+Run `npm run start` for start.
 
 
 ## Running unit tests
