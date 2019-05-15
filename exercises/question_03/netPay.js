@@ -35,7 +35,7 @@ const netPay = (data) => {
     const checkMoneyDiscount = amountDiscount(data.type, data.buy);
 
     if (checkDiscountPercent > 0) {
-        finalPay = data.buy - ((data.bill*checkDiscountPercent)/100);
+        finalPay = data.buy - ((data.buy*checkDiscountPercent)/100);
     } else if (checkMoneyDiscount > 0) {
         finalPay = data.buy - checkMoneyDiscount;
     } else {

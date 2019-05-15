@@ -1,10 +1,10 @@
 const loadData = (text) => {
-    let s = text.search('\n');
+    let searchStr = text.search('\n');
     let arraySplitN, searchString, arraySplitSemiColon, searchCharacter, arraySplitCharacter, seachStringIfNotCharacter, arraySplitEnd;
     let object1 = {};
     let object2 = {};
     let result = [];
-    if (s > -1) {
+    if (searchStr > -1) {
         arraySplitN = text.split('\n');
         arraySplitN.map(i => {
             searchString = i.search(';');
@@ -30,4 +30,5 @@ const loadData = (text) => {
     }
     return result;
 }
+
 export default loadData
